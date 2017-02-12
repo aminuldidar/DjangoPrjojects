@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+<title>This is book list</title>
+</head>
+<body>
+<h1>Book List</h1>
+<p>Here are the items you've ordered:</p>
+<ul>
+{% for item in names %}
+<li>Book name is: {{ item.name }}</li>
+{% endfor %}
+</ul>
+<hr>
+<p>Thanks for visiting my site.</p>
+
+</body>
+</html>
