@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 
 class Publisher(models.Model):
 	name = models.CharField(max_length=30)
@@ -28,4 +29,8 @@ class Book(models.Model):
 	publication_date = models.DateTimeField('date published')
 	def __str__(self):
 		return self.title
-	
+
+class AuthorForm(ModelForm):
+    class Meta:
+        model = Author
+        fields = ['salutation', 'first_name', 'last_name', 'email']

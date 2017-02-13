@@ -1,5 +1,5 @@
 from django import forms
-from books.models import Publisher
+
 
 TOPIC_CHOICES = (
 	('general', 'General enquiry'),
@@ -12,4 +12,3 @@ class ContactForm(forms.Form):
 	message = forms.CharField(widget=forms.Textarea(),initial="Replace with your feedback")
 	sender = forms.EmailField(required=False)
 	
-PublisherForm = forms.ModelForm(Publisher)

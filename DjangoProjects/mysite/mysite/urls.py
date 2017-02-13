@@ -32,4 +32,6 @@ urlpatterns = [
 	url(r'^contact/thanks/(?P<tst>[^/]+)/$', thanks, name='ul_name'),
 	url(r'^click/$', click, name='click_me'),
 	url(r'^add_publisher/$', add_publisher),
+	url(r'^bar/$', foobar_view, {'template_name': 'temp.html', 'tst' : 'test'}),
+	
 ]

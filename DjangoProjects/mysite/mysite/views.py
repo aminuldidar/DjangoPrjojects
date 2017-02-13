@@ -106,3 +106,7 @@ def hours_ahead(request, offset):
 def show_profile(request):
 	html = "<html><body>Here Your profile will show. This is first profile</body></html>"
 	return HttpResponse(html)
+
+def foobar_view(request, template_name, tst):
+	#html = "<html><body>Here Your profile will show. This is first profile</body></html>"
+	return render_to_response(template_name, {'tst': tst})

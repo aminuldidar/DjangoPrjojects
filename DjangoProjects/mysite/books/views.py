@@ -1,12 +1,12 @@
 from django.db.models import Q
-from django.shortcuts import render, render_to_response
-from books.models import Book
+from django.shortcuts import render, render_to_response, redirect
+from books.models import Book, AuthorForm
 from books.forms import ContactForm
 from django.template import RequestContext
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from forms import PublisherForm
+#from forms import PublisherForm
 def search(request):
 	query = request.GET.get('q', '')
 	if query:
@@ -49,22 +49,26 @@ def contact(request):
 
 def add_publisher(request):
 	if request.method == 'POST':
-		form = PublisherForm(request.POST)
+		form = AuthorForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return HttpResponseRedirect('/add_publisher/thanks/')
+			sender = form.cleaned_data['first_name']
+			#print(sen)
+			return redirect('ul_name', tst=sender)
+			#return HttpResponseRedirect(reverse('thanks_author', kwargs={'tst': location}))
 	else:
-		form = PublisherForm()
-	return render_to_response('books/add_publisher.html', {'form': form})
+		form = AuthorForm()
+	return render_to_response('books/add_publisher.html', {'form': form}, context_instance=RequestContext(request))
 	
 def thanks(request, tst):
 	#print("The name is" % str(name))
 	#query = request.GET.get('name', '')
-	return render_to_response(request,'books/thanks.html',{'tst' : tst})
+	return render_to_response('books/thanks.html',{'tst' : tst})
 
 def click(request):
 	#print("The name is" % str(name))
 	return render(request,'books/click.html')
+
 	
 	
 	
