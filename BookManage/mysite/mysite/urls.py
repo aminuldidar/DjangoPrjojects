@@ -16,9 +16,16 @@ Including another URLconf
 """
 
 from django.conf.urls import *
-from django.contrib import admin	
+from django.contrib import admin
+#from django.views.generic import list_detail	
 from mysite.views import *
 from books.views import *
+
+#from mysite.books.models import Publisher
+
+publisher_info = {
+"queryset" : Publisher.objects.all(),
+}
 
 urlpatterns = [
 	url(r'^$', book_list),
@@ -33,5 +40,5 @@ urlpatterns = [
 	url(r'^click/$', click, name='click_me'),
 	url(r'^add_publisher/$', add_publisher),
 	url(r'^bar/$', foobar_view, {'template_name': 'temp.html', 'tst' : 'test'}),
-	
+	url(r'^publishers/$', PublisherList.as_view()),
 ]

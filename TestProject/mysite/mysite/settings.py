@@ -38,8 +38,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'django.contrib.sites',
-	'django.contrib.flatpages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -50,7 +48,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-	'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 ROOT_URLCONF = 'mysite.urls'
@@ -60,7 +57,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {	
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['D:/DjangoProjects/BookManage/templates',],
+        'DIRS': ['C:/Users/aislam/Dropbox/DjangoProjects/templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,7 +128,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-SITE_ID = 1
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 

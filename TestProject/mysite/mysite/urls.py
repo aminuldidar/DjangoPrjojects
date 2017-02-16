@@ -19,6 +19,11 @@ from django.conf.urls import *
 from django.contrib import admin	
 from mysite.views import *
 from books.views import *
+from books.models import *
+
+book_info = {
+"queryset" : Book.objects.all().order_by("-publication_date"),
+}
 
 urlpatterns = [
 	url(r'^$', book_list),
@@ -31,4 +36,8 @@ urlpatterns = [
 	url(r'^contact/$', contact),
 	url(r'^contact/thanks/(?P<tst>[^/]+)/$', thanks, name='ul_name'),
 	url(r'^click/$', click, name='click_me'),
+	url(r'^add_publisher/$', add_publisher),
+	url(r'^bar/$', foobar_view, {'template_name': 'temp.html', 'tst' : 'test'}),
+	#url(r'^books/$', list_detail.object_list, book_info),
+	
 ]
