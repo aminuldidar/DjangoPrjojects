@@ -57,7 +57,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {	
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['D:/DjangoProjects/BookManage/templates',],
+        'DIRS': ['C:/Users/aislam/Dropbox/DjangoProjects/templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
