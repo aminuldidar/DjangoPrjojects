@@ -60,7 +60,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {	
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['D:/DjangoProjects/BookManage/templates',],
+        'DIRS': ['D:/DjangoPrjojects/BookManage/templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
